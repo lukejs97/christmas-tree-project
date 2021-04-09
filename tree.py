@@ -13,7 +13,7 @@ else:
 print("*".center(((size * 2) + 1)))
 midSpace = 1
 for sect in reversed(range(size)):
-    print("/".rjust(sect + 1) + "\\".rjust(midSpace))
+    print("/".rjust(sect + 1), "\\".rjust(midSpace))
     midSpace += 2
 print("-".center(((size * 2) + 1), "-"))
 print("#".center(((size * 2) + 1)))
