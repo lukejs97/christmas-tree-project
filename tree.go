@@ -8,9 +8,21 @@ import (
 )
 
 func checkArgs() int {
-	size, err := strconv.Atoi(os.Args[2])
-	if err == nil {
-		printTree(size)
+	size := 3
+	if len(os.Args) < 3 {
+		println("Size not specified. Defaulting to size 3.")
+	} else if len(os.Args) > 3 {
+		println("Error: Too many arguments")
+        println("Usage: go run tree.go -height [TREE_SIZE]")
+        println("Exiting...")
+        os.Exit(1)
+	} else {
+		size, err := strconv.Atoi(os.Args[2])
+		if err == nil {
+			return size
+		}
+		println("Error: TREE_SIZE must be a integer")
+		os.Exit(1)
 	}
 	return size
 }

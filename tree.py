@@ -7,7 +7,7 @@ def checkArgs():
         print("Size not specified. Defaulting to size 3.")
     elif len(sys.argv) > 3: # need to stop here
         print("Error: Too many arguments")
-        print("Usage: py tree -height [TREE_SIZE]")
+        print("Usage: py tree.py -height [TREE_SIZE]")
         print("Exiting...")
         sys.exit()
     else:
