@@ -4,15 +4,19 @@ def checkArgs():
     """A function to verify command line argument input and report errors"""
     size = 3
     if len(sys.argv) < 3:
-        print("Size not specified. Default size is 3.")
+        print("Size not specified. Defaulting to size 3.")
     elif len(sys.argv) > 3: # need to stop here
-        print("Too many arguments")
+        print("Error: Too many arguments")
         print("Usage: py tree -height [TREE_SIZE]")
+        print("Exiting...")
+        sys.exit()
     else:
         try:
             size = int(sys.argv[2])
         except ValueError as e:
-            print(e, "TREE_SIZE must be a integer")
+            print("Error:", e, "TREE_SIZE must be a integer")
+            print("Exiting...")
+            sys.exit()
     return size
 
 def printTree(size: int):
@@ -27,7 +31,7 @@ def printTree(size: int):
 
 def main():
     """A driver function for using checkArgs and printTree to build a Christmas tree"""
-    size = 0
+    size = 3
     size = checkArgs()
     printTree(size)
 
