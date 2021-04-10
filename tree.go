@@ -1,4 +1,5 @@
-package main
+// Package tree prints out a textual Christmas tree
+package tree
 
 import (
 	"os"
@@ -7,7 +8,8 @@ import (
 	"strings"
 )
 
-func checkArgs() int {
+// checkArgs verifies command line argument input and report errors.
+func checkArgs() int{
 	size := 3
 	if len(os.Args) < 3 {
 		println("Size not specified. Defaulting to size 3.")
@@ -27,6 +29,8 @@ func checkArgs() int {
 	return size
 }
 
+// printTree prints a correctly formatted Christmas tree of the specified size.
+// If no size is given, a default size of 3 will be assigned.
 func printTree(size int) {
 	fmt.Printf("%*s\n", size + 1, "*")
 	midSpace := 2
@@ -39,6 +43,7 @@ func printTree(size int) {
 	fmt.Printf("%*s\n", size + 1, "#")
 }
 
+// main is a driver function that uses checkArgs and printTree to build a Christmas tree.
 func main() {
 	size := checkArgs()
 	printTree(size)

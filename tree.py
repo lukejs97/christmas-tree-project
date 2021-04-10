@@ -30,7 +30,7 @@ def printTree(size: int):
     print("#".center(((size * 2) + 1)))
 
 def main():
-    """A driver function for using checkArgs and printTree to build a Christmas tree"""
+    """A driver function that uses checkArgs and printTree to build a Christmas tree"""
     size = checkArgs()
     printTree(size)
 
