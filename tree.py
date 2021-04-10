@@ -31,7 +31,6 @@ def printTree(size: int):
 
 def main():
     """A driver function for using checkArgs and printTree to build a Christmas tree"""
-    size = 3
     size = checkArgs()
     printTree(size)
 
